@@ -1,0 +1,153 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply text-base;
+  }
+
+  @media (max-width: 768px) {
+    html {
+      @apply text-sm;
+    }
+  }
+
+  body {
+    @apply font-sans text-base leading-relaxed text-foreground antialiased;
+    background-color: #ffffff;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .dark body {
+    background-color: #0f172a;
+    color: #f9fafb;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-primary outline-offset-2;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-2 outline-primary outline-offset-2;
+  }
+
+  *:focus:not(:focus-visible) {
+    @apply outline-none;
+  }
+
+  a {
+    @apply text-primary no-underline transition-colors;
+  }
+
+  a:hover {
+    @apply text-primary-dark;
+  }
+
+  a:focus-visible {
+    @apply outline-2 outline-primary outline-offset-2 rounded;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight text-foreground;
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #f9fafb;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      @apply text-3xl;
+    }
+    
+    h2 {
+      @apply text-2xl;
+    }
+    
+    h3 {
+      @apply text-xl;
+    }
+    
+    h4 {
+      @apply text-lg;
+    }
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-br from-primary to-primary-dark;
+  }
+
+  .shadow-button {
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+  }
+
+  .shadow-button-hover {
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  }
+
+  .shadow-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .bg-background-dark {
+    background-color: #0f172a;
+  }
+
+  .bg-card-dark {
+    background-color: #1e293b;
+  }
+
+  .bg-accent-dark {
+    background-color: #1e293b;
+  }
+
+  .text-foreground-dark {
+    color: #f9fafb;
+  }
+
+  .text-muted-foreground-dark {
+    color: #9ca3af;
+  }
+
+  .border-border-dark {
+    border-color: #334155;
+  }
+}
